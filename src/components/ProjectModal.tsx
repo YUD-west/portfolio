@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, Github, CheckCircle2, Layers, Cpu, AlertCircle, Flame } from 'lucide-react';
+import { X, ExternalLink, Github, CheckCircle2, Cpu } from 'lucide-react';
 import { ProjectItem } from '../types/portfolio';
 
 interface ProjectModalProps {
@@ -33,7 +33,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-[#111111] border border-white/15 rounded-xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col animate-fade-up text-left"
+        className="relative w-full max-w-2xl bg-[#111111] border border-white/15 rounded-xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -47,16 +47,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {project.status === 'Live' ? (
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-lime-400/10 text-lime-400 border border-lime-400/30 flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-lime-400 animate-pulse"></span>
-                  Live Deployment
-                </span>
-              ) : project.status === 'In Development' ? (
-                <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20 flex items-center gap-1">
-                  <Flame className="w-3 h-3 text-amber-400" />
-                  Cooking / In Dev
+                  Live
                 </span>
               ) : (
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-400 border border-white/10">
-                  {project.status}
+                  In Progress
                 </span>
               )}
             </div>
@@ -73,7 +68,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             onClick={onClose}
             type="button"
             className="p-2 rounded-lg bg-[#181818] text-zinc-400 hover:text-white hover:bg-[#222222] border border-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-lime-400"
-            aria-label="Close project details"
+            aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
@@ -84,31 +79,18 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Overview */}
           <div className="space-y-2">
             <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400">
-              Overview
+              About
             </h4>
             <p className="text-zinc-300 leading-relaxed font-sans">
               {project.description}
             </p>
           </div>
 
-          {/* Problem & Motivation */}
-          {project.problemSolved && (
-            <div className="space-y-2 p-4 rounded-lg bg-[#161616] border border-white/5">
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-lime-400 font-medium">
-                <AlertCircle className="w-4 h-4" />
-                Problem Solved
-              </div>
-              <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed font-sans">
-                {project.problemSolved}
-              </p>
-            </div>
-          )}
-
-          {/* Key Functional Highlights */}
+          {/* Key Features */}
           <div className="space-y-2.5">
             <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400 flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-lime-400" />
-              Key Features & Capabilities
+              Key Features
             </h4>
             <ul className="space-y-2">
               {project.keyHighlights.map((hl, idx) => (
@@ -124,7 +106,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div className="space-y-2">
             <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400 flex items-center gap-1.5">
               <Cpu className="w-4 h-4 text-lime-400" />
-              Technologies & Tools
+              Stack & Tools
             </h4>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
@@ -137,60 +119,33 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               ))}
             </div>
           </div>
-
-          {/* Architecture Notes */}
-          {project.architectureNotes && (
-            <div className="space-y-2">
-              <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400 flex items-center gap-1.5">
-                <Layers className="w-4 h-4 text-lime-400" />
-                Architecture Notes
-              </h4>
-              <p className="text-zinc-400 text-xs leading-relaxed font-mono">
-                {project.architectureNotes}
-              </p>
-            </div>
-          )}
         </div>
 
-        {/* Modal Footer / Action Links */}
-        <div className="p-4 sm:p-6 border-t border-white/10 bg-[#0E0E0E] flex flex-wrap items-center justify-between gap-3">
-          <div className="text-[11px] font-mono text-zinc-500">
-            {project.status === 'Live' ? (
-              <span className="text-lime-400">Deployed and running live in production</span>
-            ) : (
-              <span>Actively in development</span>
-            )}
-          </div>
+        {/* Modal Footer */}
+        <div className="p-4 sm:p-6 border-t border-white/10 bg-[#0E0E0E] flex items-center justify-end gap-3">
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="px-3.5 py-2 rounded-md bg-[#181818] text-white border border-white/15 text-xs font-medium hover:border-lime-400/50 hover:text-lime-400 transition-colors flex items-center gap-2"
+            >
+              <Github className="w-4 h-4" />
+              <span>Source Code</span>
+            </a>
+          )}
 
-          <div className="flex items-center gap-2">
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="px-3.5 py-2 rounded-md bg-[#181818] text-white border border-white/15 text-xs font-medium hover:border-lime-400/50 hover:text-lime-400 transition-colors flex items-center gap-2"
-              >
-                <Github className="w-4 h-4" />
-                <span>Source Code</span>
-              </a>
-            )}
-
-            {project.liveUrl ? (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="px-3.5 py-2 rounded-md bg-white text-black text-xs font-semibold hover:bg-lime-400 transition-colors flex items-center gap-1.5"
-              >
-                <span>Visit Live App</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            ) : (
-              <span className="px-3 py-2 rounded-md bg-[#141414] text-zinc-500 border border-white/5 text-xs font-mono">
-                Deployment in Progress
-              </span>
-            )}
-          </div>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="px-3.5 py-2 rounded-md bg-white text-black text-xs font-semibold hover:bg-lime-400 transition-colors flex items-center gap-1.5"
+            >
+              <span>Visit Site</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          )}
         </div>
       </div>
     </div>

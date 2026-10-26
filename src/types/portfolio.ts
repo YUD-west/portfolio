@@ -3,7 +3,7 @@ export interface ProjectItem {
   title: string;
   tagline: string;
   description: string;
-  category: 'Full-Stack' | 'AI & ML' | 'Civic Tech' | 'E-Commerce' | 'Systems & DSA' | 'Networking';
+  category: string;
   status: 'Live' | 'In Development' | 'Active Project' | 'Prototype';
   technologies: string[];
   keyHighlights: string[];
@@ -30,7 +30,7 @@ export interface SkillCategory {
   description: string;
   skills: {
     name: string;
-    level?: 'Advanced' | 'Proficient' | 'Working Knowledge' | 'Exploring';
+    level?: string;
     tag?: string;
   }[];
 }
@@ -62,7 +62,6 @@ export interface PortfolioData {
     availability: string;
     bioShort: string;
     bioLong: string[];
-    coreValues: { title: string; desc: string }[];
   };
   socials: SocialLinks;
   projects: ProjectItem[];

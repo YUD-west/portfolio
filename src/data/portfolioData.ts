@@ -3,33 +3,19 @@ import { PortfolioData } from '../types/portfolio';
 export const portfolioData: PortfolioData = {
   personal: {
     name: "Yesuf Dergu",
-    role: "Self-taught Developer | Full-Stack Developer | Aspiring AI/ML Engineer",
+    role: "Full-Stack Developer | Aspiring AI/ML Engineer",
     subRoles: [
       "Full-Stack Web Development",
       "Applied AI & Machine Learning",
-      "Systems & Data Structures (DSA)"
+      "Data Structures & Algorithms"
     ],
     location: "Ethiopia",
-    availability: "Available for engineering roles & collaborative projects",
-    bioShort: "I build real-world software, learn by creating, and solve practical problems with modern web architecture, algorithmic thinking, and applied machine learning.",
+    availability: "Available for engineering roles and collaborations",
+    bioShort: "I build web applications, algorithmic tools, and applied AI systems.",
     bioLong: [
-      "I am a self-taught software developer based in Ethiopia. Rather than relying on traditional academic paths, I learned how to build resilient systems by tackling real problems hands-on — reading documentation, dissecting open-source codebases, and shipping projects from scratch.",
-      "My development journey spans full-stack engineering with React, TypeScript, and Node.js, combined with deep explorations into data structures & algorithms (such as custom matching engines) and applied machine learning. I prioritize crafting clean, accessible user interfaces that communicate seamlessly with reliable backend services.",
-      "From deploying production platforms like NegadeX, YegnaFarm AI, and CGC Woliso, to actively building projects like De Larada, ScamShield AI, and HomeNet, my philosophy remains constant: build software that is useful, dependable, and solves concrete human needs."
-    ],
-    coreValues: [
-      {
-        title: "Learn by Building",
-        desc: "Theory solidifies when translated into working software. I grow my skills by writing code, refactoring architectures, and shipping complete solutions to production."
-      },
-      {
-        title: "Practical Problem Solving",
-        desc: "Software exists to solve real human and organizational problems. I prioritize pragmatic architecture and clean user experience over needless complexity."
-      },
-      {
-        title: "Craftsmanship & Restraint",
-        desc: "Writing maintainable, readable code with deliberate minimalism — in design, architecture, and technology selection."
-      }
+      "I am a self-taught software developer based in Ethiopia. I learned software engineering by building real systems from the ground up—reading documentation, studying open-source codebases, and shipping projects.",
+      "My work centers on full-stack web development with React, TypeScript, and Node.js, combined with practical exploration in data structures, algorithms, and machine learning. I prioritize clean, maintainable code and fast, responsive interfaces.",
+      "I have built and deployed live platforms including NegadeX, YegnaFarm AI, and CGC Woliso, and am actively developing new projects like De Larada, ScamShield AI, and HomeNet."
     ]
   },
 
@@ -41,22 +27,19 @@ export const portfolioData: PortfolioData = {
   },
 
   projects: [
-    // --- LIVE DEPLOYED PROJECTS ---
     {
       id: "negadex",
       title: "NegadeX",
-      tagline: "Modern stock trading simulator powered by real DSA",
-      description: "A high-performance simulated stock trading platform built with core data structures and algorithms. Features an in-memory order book matching engine utilizing heaps (priority queues), hash maps for O(1) balance tracking, binary search for price history scanning, and real-time trade execution.",
+      tagline: "Stock trading simulator powered by real DSA",
+      description: "A simulated stock trading platform built with core data structures and algorithms. Features an in-memory order book matching engine using heaps (priority queues), hash maps for O(1) portfolio tracking, binary search for price history scanning, and real-time trade execution.",
       category: "Systems & DSA",
       status: "Live",
       technologies: ["React", "TypeScript", "Tailwind CSS", "DSA", "Vite"],
       keyHighlights: [
-        "In-memory order book matching engine simulating limit & market orders with heaps",
+        "In-memory order book matching engine simulating limit and market orders",
         "O(1) portfolio asset valuation and balance computation using hash maps",
-        "Tactile dark terminal-inspired trading UI with responsive execution telemetry"
+        "Fast dark trading UI with real-time simulated order settlement"
       ],
-      problemSolved: "Traditional financial education lacks interactive, transparent platforms where learners can observe algorithmic order matching and exchange mechanics without real capital risk.",
-      architectureNotes: "Pure client-side state architecture implementing priority queue order books, bid/ask spread tracking, and continuous trade settlement algorithms.",
       githubUrl: "https://github.com/YUD-west/NegadeX-Trading-Simulator",
       liveUrl: "https://negadex.vercel.app/",
       isFeatured: true
@@ -65,17 +48,15 @@ export const portfolioData: PortfolioData = {
       id: "yegnafarm-ai",
       title: "YegnaFarm AI",
       tagline: "Agricultural intelligence and crop advisory platform",
-      description: "A live agricultural technology platform providing practical, data-informed advisory tools for farmers. Designed to assist with crop observation, disease pattern recognition, localized weather insights, and sustainable agronomic guidance.",
+      description: "A deployed agricultural technology platform providing advisory tools for farmers. Designed to assist with crop monitoring, disease pattern recognition, localized weather alerts, and sustainable farming practices.",
       category: "AI & ML",
       status: "Live",
       technologies: ["React", "TypeScript", "Applied AI", "Python / REST", "Tailwind CSS"],
       keyHighlights: [
-        "Live web application delivering practical decision support for agricultural workflows",
+        "Live web application delivering decision support for agricultural workflows",
         "Crop condition monitoring and localized planting advisory guides",
-        "Performance-optimized frontend engineered for low-bandwidth rural connections"
+        "Mobile-first interface optimized for low-bandwidth connections"
       ],
-      problemSolved: "Bridging the information gap between scientific agricultural best practices and everyday smallholder farming decisions in Ethiopia.",
-      architectureNotes: "Fast, responsive web client deployed on Vercel, decoupled from analytical backend models for high resilience and low latency.",
       githubUrl: "https://github.com/YUD-west/farmer-consult-platform",
       liveUrl: "https://frontend-alpha-gray-52.vercel.app/",
       isFeatured: true
@@ -83,39 +64,33 @@ export const portfolioData: PortfolioData = {
     {
       id: "cgc-woliso",
       title: "CGC Woliso",
-      tagline: "Cyber Guardians Club university innovation platform",
-      description: "The official public web platform for the Cyber Guardians Club at Ambo University, Woliso Campus. Facilitates student-led innovation across cybersecurity, AI, and software engineering with digital member passes, workshop registrations, and campus project incubation.",
-      category: "Civic Tech",
+      tagline: "University tech community platform",
+      description: "The official public web platform for the Cyber Guardians Club at Ambo University, Woliso Campus. Facilitates community initiatives across software engineering, AI, and cybersecurity with digital event passes and campus project registration.",
+      category: "Full-Stack",
       status: "Live",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "SQLite"],
       keyHighlights: [
-        "Production platform serving students and faculty across multiple university departments",
-        "Digital member pass verification system with downloadable ID cards",
-        "Dynamic student project proposal incubator and team recruitment workflows"
+        "Full-stack production platform serving campus students and faculty",
+        "Digital member pass verification system with downloadable event badges",
+        "Student project proposal incubator and team recruiting workflows"
       ],
-      problemSolved: "Centralizing campus technology initiatives, workshop announcements, and student project collaborations into a unified digital hub.",
-      architectureNotes: "Full-stack React SPA backed by an Express/SQLite persistent backend, containerized and deployed live on Render with continuous operation.",
       githubUrl: "https://github.com/YUD-west",
       liveUrl: "https://cgc-woliso.onrender.com/",
       isFeatured: true
     },
-
-    // --- COOKING / IN DEVELOPMENT PROJECTS ---
     {
       id: "dealrada",
       title: "De Larada",
-      tagline: "Modern minimalist e-commerce storefront platform",
-      description: "A streamlined digital retail platform featuring dynamic catalog navigation, responsive attribute filtering, cart state management, and an accessible checkout flow designed with high typographic clarity.",
+      tagline: "E-commerce storefront platform",
+      description: "A digital retail storefront featuring dynamic catalog navigation, multi-attribute filtering, shopping cart state management, and an accessible checkout flow.",
       category: "E-Commerce",
       status: "In Development",
       technologies: ["React", "TypeScript", "Tailwind CSS", "State Architecture"],
       keyHighlights: [
-        "Instant multi-attribute product filtering by category, price, and stock",
-        "Client-side cart orchestration with real-time subtotal and tax calculation",
-        "Deliberate, tactile card hover interactions and keyboard-friendly checkout"
+        "Instant filtering by category, price range, and availability",
+        "Client-side cart orchestration with real-time total computation",
+        "Clean, responsive product catalog and checkout workflow"
       ],
-      problemSolved: "Building an end-to-end e-commerce user experience with zero layout shift, snappy client transitions, and clean state isolation.",
-      architectureNotes: "Modular component tree with typed shopping cart state reducers and decoupled product data fixtures.",
       githubUrl: "https://github.com/YUD-west/dealrada-ecommerce-platform",
       liveUrl: "",
       isFeatured: true
@@ -123,18 +98,16 @@ export const portfolioData: PortfolioData = {
     {
       id: "scamshield-ai",
       title: "ScamShield AI",
-      tagline: "AI-powered fraud detection & scam identification",
-      description: "A cybersecurity and machine learning initiative designed to protect everyday users from deceptive communication, social engineering attacks, and fraudulent payment solicitations.",
+      tagline: "Fraud detection and scam pattern analyzer",
+      description: "A security and machine learning project designed to identify deceptive communication patterns, social engineering tactics, and fraudulent payment solicitations.",
       category: "AI & ML",
       status: "In Development",
       technologies: ["Python", "NLP", "Machine Learning", "FastAPI / React"],
       keyHighlights: [
         "Text classification heuristics detecting deceptive phrasing and urgency cues",
-        "Confidence-scored risk assessment with explainable scam factor breakdowns",
-        "Lightweight API design ready for browser extension or mobile client integration"
+        "Risk scoring breakdown with explainable scam factor indicators",
+        "Lightweight API ready for browser and mobile integrations"
       ],
-      problemSolved: "Digital scams and mobile payment fraud are rapidly escalating, requiring accessible heuristic and machine learning defenses.",
-      architectureNotes: "Natural language processing pipelines evaluating syntactical patterns, deceptive URLs, and anomalous payment requests.",
       githubUrl: "https://github.com/YUD-west/ScamShield-AI",
       liveUrl: "",
       isFeatured: true
@@ -142,18 +115,16 @@ export const portfolioData: PortfolioData = {
     {
       id: "library-management-system",
       title: "Library Management System",
-      tagline: "Institutional catalog, circulation & inventory platform",
-      description: "A structured full-stack library management system designed to track institutional book collections, patron checkout histories, automated overdue notices, and catalog search.",
+      tagline: "Book catalog and circulation system",
+      description: "A full-stack library management system designed to track institutional collections, book checkout histories, automated overdue notices, and catalog searches.",
       category: "Full-Stack",
       status: "In Development",
-      technologies: ["React", "TypeScript", "Node.js", "Express", "Database Systems"],
+      technologies: ["React", "TypeScript", "Node.js", "Express", "SQL"],
       keyHighlights: [
-        "Book catalog indexing with ISBN lookup, genre categorization, and shelf location",
-        "Patron circulation management, lending limits, and reservation queues",
-        "Administrative metrics dashboard for circulation statistics and inventory health"
+        "Book catalog indexing with ISBN lookup and genre categorization",
+        "Patron lending limits, reservation queues, and due-date tracking",
+        "Admin dashboard for inventory health and circulation statistics"
       ],
-      problemSolved: "Replacing manual ledger tracking with an automated, searchable digital catalogue and patron management system.",
-      architectureNotes: "Relational database schema with transactional lending flows and role-based staff administration.",
       githubUrl: "https://github.com/YUD-west/library-management-system",
       liveUrl: "",
       isFeatured: false
@@ -161,18 +132,16 @@ export const portfolioData: PortfolioData = {
     {
       id: "homenet",
       title: "HomeNet",
-      tagline: "Local network intelligence & device management hub",
-      description: "A systems and networking tool designed for local area network discovery, device inventory monitoring, latency diagnostic metrics, and home network traffic visibility.",
+      tagline: "Local network discovery and diagnostic tool",
+      description: "A networking tool designed for local subnet scanning, device inventory monitoring, latency metrics, and connection diagnostics.",
       category: "Networking",
       status: "In Development",
-      technologies: ["Python", "Networking Protocols", "React", "TypeScript", "REST"],
+      technologies: ["Python", "Networking Protocols", "React", "TypeScript"],
       keyHighlights: [
-        "Automated local subnet scanning and active host IP/MAC identification",
+        "Automated subnet scanning and active host identification",
         "Real-time ping, packet latency, and connection stability metrics",
-        "Intuitive dashboard for monitoring bandwidth consumption and device status"
+        "Clear dashboard for monitoring local network devices"
       ],
-      problemSolved: "Providing straightforward visibility into connected home network devices and connection reliability without complicated enterprise software.",
-      architectureNotes: "Lightweight local discovery agent paired with a clean web dashboard for network diagnostics.",
       githubUrl: "https://github.com/YUD-west",
       liveUrl: "",
       isFeatured: false
@@ -181,17 +150,15 @@ export const portfolioData: PortfolioData = {
       id: "urjii",
       title: "Urjii",
       tagline: "Job discovery and opportunity matching platform",
-      description: "A modern web platform connecting talent with relevant career and contract opportunities through structured category filtering, applicant profiles, and direct discovery pathways.",
+      description: "A web platform connecting job seekers with opportunities through structured category filtering, candidate profiles, and direct search.",
       category: "Full-Stack",
       status: "In Development",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "REST APIs"],
+      technologies: ["React", "TypeScript", "Node.js", "REST APIs", "Tailwind CSS"],
       keyHighlights: [
-        "Structured search and multi-criteria role filtering (location, skill set, work type)",
-        "Mobile-optimized job feed tailored for accessible user engagement",
-        "Clean candidate profile data model and opportunity matching"
+        "Multi-criteria filtering by role, location, and employment type",
+        "Mobile-optimized applicant interface for straightforward job discovery",
+        "Clean candidate profile data model"
       ],
-      problemSolved: "Simplifying fragmented job searching with a focused, minimal interface that highlights essential details quickly.",
-      architectureNotes: "Modular React and TypeScript architecture prepared for REST backend integration.",
       githubUrl: "https://github.com/YUD-west",
       liveUrl: "",
       isFeatured: false
@@ -199,18 +166,16 @@ export const portfolioData: PortfolioData = {
     {
       id: "kefeta",
       title: "Kefeta Youth Center",
-      tagline: "Youth empowerment center digital platform",
-      description: "A dedicated digital hub developed for the Kefeta Youth Center community. Serves as an information center and activity coordination platform to showcase programs, share resources, and engage young people.",
-      category: "Civic Tech",
-      status: "Active Project",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Modern Web APIs"],
+      tagline: "Youth community platform",
+      description: "A web platform developed for Kefeta Youth Center to publish workshop schedules, educational materials, and youth empowerment activities.",
+      category: "Full-Stack",
+      status: "In Development",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Web APIs"],
       keyHighlights: [
-        "Centralized directory for upcoming youth workshops, training, and events",
-        "Digital resource portal for educational materials and youth guides",
-        "Accessible, high-contrast user interface tailored for diverse device access"
+        "Directory of upcoming workshops, training, and events",
+        "Resource portal for educational guides and community updates",
+        "Responsive design accessible across all device sizes"
       ],
-      problemSolved: "Coordinating youth development programs and distributing educational resources across local communities.",
-      architectureNotes: "Lightweight, performance-tuned frontend with semantic HTML and zero heavy layout overhead.",
       githubUrl: "https://github.com/YUD-west",
       liveUrl: "",
       isFeatured: false
@@ -220,100 +185,95 @@ export const portfolioData: PortfolioData = {
   experiences: [
     {
       id: "exp-kefeta",
-      role: "Full-Stack Development Contributor",
+      role: "Full-Stack Developer",
       organization: "Kefeta Youth Center Platform",
       period: "2024 — Present",
       location: "Ethiopia",
-      description: "Leading the development and iteration of the digital platform for Kefeta Youth Center, creating reliable tools for youth engagement, program awareness, and community resources.",
+      description: "Building the digital platform for Kefeta Youth Center, providing tools for youth engagement, program awareness, and community resources.",
       highlights: [
-        "Architected responsive web pages to present youth initiatives, workshops, and local programs",
-        "Implemented clear information architecture allowing non-technical staff to organize community updates",
-        "Focused on performance and cross-device compatibility to support users on varied network speeds"
+        "Architected responsive web pages for youth initiatives, workshops, and programs",
+        "Structured information flows for non-technical community coordinators",
+        "Optimized pages for performance across varying network speeds"
       ],
-      skillsUsed: ["React", "TypeScript", "Tailwind CSS", "UI/UX Architecture", "Community Tech"]
+      skillsUsed: ["React", "TypeScript", "Tailwind CSS", "UI Design"]
     },
     {
       id: "exp-cgc",
-      role: "Lead Platform Developer & Community Lead",
+      role: "Lead Platform Developer",
       organization: "Cyber Guardians Club (CGC Woliso)",
       period: "2024 — Present",
       location: "Woliso, Ethiopia",
-      description: "Architected, built, and deployed the official CGC platform on Render, enabling hundreds of students to register for tech cohorts, generate digital event passes, and propose campus software projects.",
+      description: "Architected, built, and deployed the official CGC platform on Render, enabling students to register for technical cohorts and access event passes.",
       highlights: [
-        "Engineered full-stack platform with React, TypeScript, Express, and persistent SQLite database",
-        "Implemented verifiable digital pass generation system with QR codes and high-contrast card styling",
-        "Maintained 100% live uptime on Render for campus community activities"
+        "Engineered full-stack platform with React, TypeScript, Express, and SQLite",
+        "Implemented digital pass verification with QR codes and responsive badge cards",
+        "Maintained continuous uptime on cloud infrastructure"
       ],
-      skillsUsed: ["Full-Stack Architecture", "Node.js", "Express", "SQLite", "React", "Render Deployment"]
+      skillsUsed: ["React", "TypeScript", "Node.js", "Express", "SQLite"]
     },
     {
       id: "exp-community",
-      role: "Active Contributor & Peer Developer",
-      organization: "Ethiopian Tech Community Initiatives",
+      role: "Community Contributor",
+      organization: "Ethiopian Tech Community",
       period: "2023 — Present",
       location: "Ethiopia",
-      description: "Actively participating in local and national developer ecosystems, engaging in peer code reviews, collaborative hackathons, and open knowledge sharing.",
+      description: "Active participant in local developer communities, peer reviews, collaborative hackathons, and open knowledge sharing.",
       highlights: [
-        "Secured 2nd place in the nationwide Ethiopian Cursor Community Hackathon with a rapid full-stack delivery",
-        "Collaborated with fellow self-taught developers to share project architectures and debugging techniques",
-        "Advocated for practical software engineering practices, clean code habits, and hands-on project building"
+        "Placed 2nd in the nationwide Ethiopian Cursor Community Hackathon",
+        "Collaborated with peer developers on project architecture and debugging",
+        "Promoted practical software development and hands-on coding"
       ],
-      skillsUsed: ["Collaborative Development", "Rapid Prototyping", "Hackathons", "Git / GitHub", "Problem Solving"]
+      skillsUsed: ["Rapid Prototyping", "Git / GitHub", "Full-Stack Development"]
     }
   ],
 
   skills: [
     {
       title: "Frontend Development",
-      description: "Building responsive, fast, and accessible user interfaces with modern toolchains.",
+      description: "Building responsive, accessible web interfaces.",
       skills: [
-        { name: "React.js", level: "Proficient", tag: "Core" },
-        { name: "TypeScript", level: "Proficient", tag: "Core" },
-        { name: "JavaScript (ES6+)", level: "Advanced", tag: "Core" },
-        { name: "Tailwind CSS", level: "Advanced", tag: "Core" },
-        { name: "HTML5 & Semantic Web", level: "Advanced" },
-        { name: "CSS3 & Responsive Layouts", level: "Advanced" },
-        { name: "State Management", level: "Proficient" },
-        { name: "Web Accessibility (a11y)", level: "Working Knowledge" }
+        { name: "React.js" },
+        { name: "TypeScript" },
+        { name: "JavaScript (ES6+)" },
+        { name: "Tailwind CSS" },
+        { name: "HTML5" },
+        { name: "CSS3" },
+        { name: "State Management" }
       ]
     },
     {
       title: "Backend & Systems",
-      description: "Designing reliable server-side architectures, REST APIs, and database structures.",
+      description: "Server-side applications, APIs, and data structures.",
       skills: [
-        { name: "Node.js", level: "Proficient", tag: "Core" },
-        { name: "Express.js", level: "Proficient", tag: "Core" },
-        { name: "RESTful API Design", level: "Proficient", tag: "Core" },
-        { name: "Data Structures & Algorithms", level: "Proficient", tag: "Core" },
-        { name: "SQLite & PostgreSQL", level: "Working Knowledge" },
-        { name: "Authentication & JWT", level: "Working Knowledge" },
-        { name: "API Integration", level: "Proficient" }
+        { name: "Node.js" },
+        { name: "Express.js" },
+        { name: "REST APIs" },
+        { name: "Data Structures & Algorithms" },
+        { name: "SQLite & PostgreSQL" },
+        { name: "Authentication (JWT)" }
       ]
     },
     {
       title: "Programming & Tools",
-      description: "Foundational programming languages, version control, and development workflows.",
+      description: "Core languages and developer toolchains.",
       skills: [
-        { name: "Python", level: "Proficient", tag: "Core" },
-        { name: "TypeScript", level: "Proficient", tag: "Core" },
-        { name: "JavaScript", level: "Advanced", tag: "Core" },
-        { name: "Git & GitHub", level: "Proficient", tag: "Workflow" },
-        { name: "Vite & Tooling", level: "Proficient" },
-        { name: "Linux / Bash Basics", level: "Working Knowledge" },
-        { name: "Networking Fundamentals", level: "Working Knowledge" }
+        { name: "Python" },
+        { name: "TypeScript" },
+        { name: "JavaScript" },
+        { name: "Git & GitHub" },
+        { name: "Vite" },
+        { name: "Linux / Bash" }
       ]
     },
     {
       title: "AI & Machine Learning",
-      description: "Exploring applied intelligence, data modeling, and practical AI implementations.",
+      description: "Applied machine learning and intelligent tools.",
       skills: [
-        { name: "Python for AI / ML", level: "Working Knowledge", tag: "Focus" },
-        { name: "NumPy & Data Handling", level: "Working Knowledge" },
-        { name: "Scikit-learn Concepts", level: "Working Knowledge" },
-        { name: "NLP & Text Classification", level: "Exploring" },
-        { name: "Prompt Engineering & APIs", level: "Proficient", tag: "Applied" },
-        { name: "Pattern Detection Logic", level: "Working Knowledge" },
-        { name: "Model Evaluation Basics", level: "Exploring" }
+        { name: "Python for ML" },
+        { name: "NumPy" },
+        { name: "Scikit-learn" },
+        { name: "NLP Basics" },
+        { name: "LLM APIs" }
       ]
     }
   ],
@@ -322,16 +282,15 @@ export const portfolioData: PortfolioData = {
     {
       id: "cursor-hackathon-2024",
       title: "Ethiopian Cursor Community Hackathon",
-      award: "2nd Place Winner",
+      award: "2nd Place",
       event: "National Developer Hackathon",
-      date: "Recent Achievement",
-      description: "Achieved 2nd place in the nationwide Ethiopian Cursor Community hackathon. Competing against passionate engineers, I architected and deployed a functional full-stack solution under strict time pressure, demonstrating rapid problem analysis, disciplined code structuring, and practical delivery.",
+      date: "2024",
+      description: "Awarded 2nd place in the nationwide Ethiopian Cursor Community hackathon, building and shipping a complete, functional full-stack solution under strict competition time constraints.",
       takeaways: [
-        "High-velocity development using modern AI-assisted engineering workflows",
-        "Focused prioritization on solving the core problem before decorative features",
-        "Delivered a working prototype that impressed community reviewers and judges"
-      ],
-      verificationNote: "Verified community competition result. Can be edited or linked to event recap."
+        "Rapid problem breakdown and fast full-stack prototyping",
+        "Focused execution solving the core user problem first",
+        "Working prototype selected for 2nd place by community judges"
+      ]
     }
   ]
 };

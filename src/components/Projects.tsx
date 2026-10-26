@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Github, Info, ExternalLink, Globe, Sparkles, Flame } from 'lucide-react';
+import { ArrowUpRight, Github, Info, ExternalLink } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { ProjectItem } from '../types/portfolio';
 import { ProjectModal } from './ProjectModal';
@@ -8,15 +8,12 @@ export const Projects: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('All');
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
 
-  const filters = ['All', 'Live Deployments', 'In Development (Cooking)', 'AI & ML', 'Full-Stack', 'Systems & DSA'];
+  const filters = ['All', 'Live', 'In Progress'];
 
   const filteredProjects = portfolioData.projects.filter((p) => {
     if (selectedFilter === 'All') return true;
-    if (selectedFilter === 'Live Deployments') return p.status === 'Live';
-    if (selectedFilter === 'In Development (Cooking)') return p.status === 'In Development';
-    if (selectedFilter === 'AI & ML') return p.category === 'AI & ML';
-    if (selectedFilter === 'Full-Stack') return p.category === 'Full-Stack' || p.category === 'Civic Tech' || p.category === 'E-Commerce';
-    if (selectedFilter === 'Systems & DSA') return p.category === 'Systems & DSA' || p.category === 'Networking';
+    if (selectedFilter === 'Live') return p.status === 'Live';
+    if (selectedFilter === 'In Progress') return p.status === 'In Development';
     return true;
   });
 
@@ -26,25 +23,23 @@ export const Projects: React.FC = () => {
       aria-label="Projects"
       className="py-24 px-4 sm:px-6 lg:px-8 border-b border-white/[0.06] scroll-mt-12"
     >
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="max-w-6xl mx-auto space-y-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 font-mono text-xs text-lime-400 uppercase tracking-widest">
-              <span>02</span>
-              <span className="text-zinc-600">/</span>
-              <span>Featured Projects</span>
-            </div>
+            <span className="font-mono text-xs text-lime-400 uppercase tracking-widest">
+              Projects
+            </span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              Selected Work & Explorations
+              Featured Work
             </h2>
-            <p className="text-sm sm:text-base text-zinc-400 max-w-xl">
-              Production web applications, algorithmic engines, and active developments across full-stack engineering and applied AI.
+            <p className="text-sm text-zinc-400 max-w-xl">
+              A selection of web applications, tools, and projects I've built and am actively developing.
             </p>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#121212] border border-white/10 rounded-lg">
+          <div className="flex items-center gap-1.5 p-1 bg-[#121212] border border-white/10 rounded-lg">
             {filters.map((f) => (
               <button
                 key={f}
@@ -66,7 +61,6 @@ export const Projects: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => {
             const isLive = project.status === 'Live';
-            const isCooking = project.status === 'In Development';
 
             return (
               <article
@@ -86,22 +80,17 @@ export const Projects: React.FC = () => {
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-lime-400"></span>
                         </span>
-                        Live App
-                      </span>
-                    ) : isCooking ? (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20 text-[11px]">
-                        <Flame className="w-3 h-3 text-amber-400" />
-                        Cooking
+                        Live
                       </span>
                     ) : (
                       <span className="px-2 py-0.5 rounded bg-[#181818] text-zinc-400 border border-white/5 text-[11px]">
-                        {project.status}
+                        In Progress
                       </span>
                     )}
                   </div>
 
                   {/* Title & Tagline */}
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     <h3 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors flex items-center justify-between">
                       <span>{project.title}</span>
                       <button
@@ -123,16 +112,8 @@ export const Projects: React.FC = () => {
                     {project.description}
                   </p>
 
-                  {/* Key feature preview */}
-                  <div className="pt-1">
-                    <div className="text-[11px] font-mono text-zinc-400 flex items-start gap-1.5">
-                      <span className="text-lime-400 font-bold">•</span>
-                      <span className="line-clamp-2">{project.keyHighlights[0]}</span>
-                    </div>
-                  </div>
-
                   {/* Tech Chips */}
-                  <div className="flex flex-wrap gap-1.5 pt-2">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {project.technologies.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
@@ -157,7 +138,7 @@ export const Projects: React.FC = () => {
                     className="text-zinc-400 hover:text-white flex items-center gap-1.5 transition-colors"
                   >
                     <Info className="w-3.5 h-3.5 text-lime-400" />
-                    <span>Architecture</span>
+                    <span>Details</span>
                   </button>
 
                   <div className="flex items-center gap-2">
@@ -182,7 +163,7 @@ export const Projects: React.FC = () => {
                         aria-label={`Open live deployment for ${project.title}`}
                         title="Visit Live"
                       >
-                        <span>Live</span>
+                        <span>Visit</span>
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     )}
@@ -192,20 +173,8 @@ export const Projects: React.FC = () => {
             );
           })}
         </div>
-
-        {/* Live projects verification badge */}
-        <div className="p-4 rounded-lg bg-[#111111] border border-white/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-zinc-400 font-mono">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-lime-400"></span>
-            <span>Live deployments verified: NegadeX, YegnaFarm AI, and CGC Woliso.</span>
-          </div>
-          <div className="text-zinc-500">
-            Source repositories hosted on <a href={portfolioData.socials.github} target="_blank" rel="noreferrer" className="text-zinc-300 hover:text-lime-400 underline">github.com/YUD-west</a>
-          </div>
-        </div>
       </div>
 
-      {/* Deep-dive Project Details Modal */}
       <ProjectModal
         project={activeModalProject}
         onClose={() => setActiveModalProject(null)}
