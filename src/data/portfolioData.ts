@@ -15,7 +15,7 @@ export const portfolioData: PortfolioData = {
     bioLong: [
       "I am a self-taught software developer based in Ethiopia. I learned software engineering by building real systems from the ground up—reading documentation, studying open-source codebases, and shipping projects.",
       "My work centers on full-stack web development with React, TypeScript, and Node.js, combined with practical exploration in data structures, algorithms, and machine learning. I prioritize clean, maintainable code and fast, responsive interfaces.",
-      "I have built and deployed live platforms including NegadeX, YegnaFarm AI, and CGC Woliso, and am actively developing new projects like De Larada, ScamShield AI, and HomeNet."
+      "I have built and deployed live platforms including NegadeX, Ambo University HRMS, YegnaFarm AI, and CGC Woliso, and am actively developing projects like De Larada, ScamShield AI, and HomeNet."
     ]
   },
 
@@ -27,6 +27,23 @@ export const portfolioData: PortfolioData = {
   },
 
   projects: [
+    {
+      id: "ambo-hrms",
+      title: "Ambo University - Human Resource Management System (HRMS)",
+      tagline: "Enterprise HRMS & employee portal with trilingual support",
+      description: "A modern, comprehensive Human Resource Management System (HRMS) and Employee Portal built for Ambo University with complete trilingual support (English, Afaan Oromoo, Amharic), enterprise Role-Based Access Control (RBAC), intelligent HR chatbot assistant, dark/light theme, employee self-service forms, attendance ledger, leave management, and performance evaluations.",
+      category: "Full-Stack",
+      status: "Live",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "RBAC", "i18n", "Vite"],
+      keyHighlights: [
+        "Complete trilingual support in English, Afaan Oromoo, and Amharic",
+        "Enterprise Role-Based Access Control (RBAC) with employee self-service portal",
+        "Intelligent HR chatbot assistant, attendance ledger, leave management, and performance evaluations"
+      ],
+      githubUrl: "https://github.com/YUD-west/library-management-system",
+      liveUrl: "https://library-management-system-gamma-orpin.vercel.app/",
+      isFeatured: true
+    },
     {
       id: "negadex",
       title: "NegadeX",
@@ -111,23 +128,6 @@ export const portfolioData: PortfolioData = {
       githubUrl: "https://github.com/YUD-west/ScamShield-AI",
       liveUrl: "",
       isFeatured: true
-    },
-    {
-      id: "library-management-system",
-      title: "Library Management System",
-      tagline: "Book catalog and circulation system",
-      description: "A full-stack library management system designed to track institutional collections, book checkout histories, automated overdue notices, and catalog searches.",
-      category: "Full-Stack",
-      status: "In Development",
-      technologies: ["React", "TypeScript", "Node.js", "Express", "SQL"],
-      keyHighlights: [
-        "Book catalog indexing with ISBN lookup and genre categorization",
-        "Patron lending limits, reservation queues, and due-date tracking",
-        "Admin dashboard for inventory health and circulation statistics"
-      ],
-      githubUrl: "https://github.com/YUD-west/library-management-system",
-      liveUrl: "",
-      isFeatured: false
     },
     {
       id: "homenet",

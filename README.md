@@ -3,6 +3,7 @@
 Personal developer portfolio built with React, TypeScript, and Tailwind CSS.
 
 ## Live Projects
+- **Ambo University HRMS:** [library-management-system-gamma-orpin.vercel.app](https://library-management-system-gamma-orpin.vercel.app/)
 - **NegadeX (Stock Trading Simulator):** [negadex.vercel.app](https://negadex.vercel.app/)
 - **YegnaFarm AI (Agricultural Intelligence):** [frontend-alpha-gray-52.vercel.app](https://frontend-alpha-gray-52.vercel.app/)
 - **CGC Woliso (Community Platform):** [cgc-woliso.onrender.com](https://cgc-woliso.onrender.com/)
@@ -10,7 +11,6 @@ Personal developer portfolio built with React, TypeScript, and Tailwind CSS.
 ## Projects in Progress
 - **De Larada:** E-commerce web application
 - **ScamShield AI:** Scam & fraud detection tool
-- **Library Management System:** Book catalog & circulation tracker
 - **HomeNet:** Local network diagnostics dashboard
 - **Urjii:** Job discovery and opportunity matching platform
 - **Kefeta Youth Center:** Community portal
