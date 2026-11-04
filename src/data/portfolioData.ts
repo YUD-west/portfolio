@@ -15,7 +15,7 @@ export const portfolioData: PortfolioData = {
     bioLong: [
       "I am a self-taught software developer based in Ethiopia. I learned software engineering by building real systems from the ground up—reading documentation, studying open-source codebases, and shipping projects.",
       "My work centers on full-stack web development with React, TypeScript, and Node.js, combined with practical exploration in data structures, algorithms, and machine learning. I prioritize clean, maintainable code and fast, responsive interfaces.",
-      "I have built and deployed live platforms including NegadeX, Ambo University HRMS, YegnaFarm AI, and CGC Woliso, and am actively developing projects like De Larada, ScamShield AI, and HomeNet."
+      "I have built and deployed live platforms including NegadeX, Ambo University HRMS, ScamShield AI, YegnaFarm AI, and CGC Woliso, and am actively developing projects like De Larada and HomeNet."
     ]
   },
 
@@ -42,6 +42,23 @@ export const portfolioData: PortfolioData = {
       ],
       githubUrl: "https://github.com/YUD-west/library-management-system",
       liveUrl: "https://library-management-system-gamma-orpin.vercel.app/",
+      isFeatured: true
+    },
+    {
+      id: "scamshield-ai",
+      title: "ScamShield AI",
+      tagline: "Fraud detection and scam pattern analyzer",
+      description: "A security and machine learning project designed to identify deceptive communication patterns, social engineering tactics, and fraudulent payment solicitations.",
+      category: "AI & ML",
+      status: "Live",
+      technologies: ["Python", "NLP", "Machine Learning", "FastAPI / React"],
+      keyHighlights: [
+        "Text classification heuristics detecting deceptive phrasing and urgency cues",
+        "Risk scoring breakdown with explainable scam factor indicators",
+        "Lightweight API ready for browser and mobile integrations"
+      ],
+      githubUrl: "https://github.com/YUD-west/ScamShield-AI",
+      liveUrl: "https://scamshield-ai-je1u.vercel.app/",
       isFeatured: true
     },
     {
@@ -109,23 +126,6 @@ export const portfolioData: PortfolioData = {
         "Clean, responsive product catalog and checkout workflow"
       ],
       githubUrl: "https://github.com/YUD-west/dealrada-ecommerce-platform",
-      liveUrl: "",
-      isFeatured: true
-    },
-    {
-      id: "scamshield-ai",
-      title: "ScamShield AI",
-      tagline: "Fraud detection and scam pattern analyzer",
-      description: "A security and machine learning project designed to identify deceptive communication patterns, social engineering tactics, and fraudulent payment solicitations.",
-      category: "AI & ML",
-      status: "In Development",
-      technologies: ["Python", "NLP", "Machine Learning", "FastAPI / React"],
-      keyHighlights: [
-        "Text classification heuristics detecting deceptive phrasing and urgency cues",
-        "Risk scoring breakdown with explainable scam factor indicators",
-        "Lightweight API ready for browser and mobile integrations"
-      ],
-      githubUrl: "https://github.com/YUD-west/ScamShield-AI",
       liveUrl: "",
       isFeatured: true
     },
